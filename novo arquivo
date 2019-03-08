@@ -1,0 +1,48 @@
+int interrupt_source = 0;
+int led_state = 0;
+unsigned long debounce_limit = 200;
+int ledpin = 4;
+int interruptPin = 2;
+unsigned long time;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(ledpin, OUTPUT);
+  pinMode(interruptPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), botao, HIGH);
+
+
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(ledpin, led_state);
+
+}
+
+boolean debounce() {
+
+      if((millis() - time) > debounce_limit){
+      time = millis();
+
+      return true;
+      } else {
+        return false;
+      }
+}
+
+
+void botao() {
+  time = millis();
+  if (debounce()) {
+   if(led_state == 1) {
+    led_state = 0;
+   } else {
+    led_state = 1;
+   }
+  }
+}
+
+
