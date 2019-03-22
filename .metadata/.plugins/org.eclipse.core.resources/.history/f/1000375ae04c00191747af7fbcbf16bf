@@ -15,8 +15,8 @@
 void USART_Init( unsigned int ubrr){
 
 /* Set baud rate */
-UBRR0H = (unsigned char)(103>>8);
-UBRR0L = (unsigned char)103;
+UBRRH = (unsigned char)(103>>8);
+UBRRL = (unsigned char)103;
 //UBRR0 = 103;
 /* Enable receiver and transmitter */
 UCSR0B = (1<<RXEN0)|(1<<TXEN0);

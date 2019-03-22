@@ -1,50 +1,20 @@
-15:11:13 **** Incremental Build of configuration Debug for project lab2serial ****
+17:24:13 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:25:12: error: ‘UCSRnA’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-            ^
-../serial.cpp:25:25: error: ‘RXCn’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-                         ^
-../serial.cpp:27:9: error: ‘UDRn’ was not declared in this scope
-  return UDRn;
-         ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:28:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-make: *** [serial.o] Error 1
-subdir.mk:18: recipe for target 'serial.o' failed
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
 
-15:11:13 Build Finished (took 118ms)
+Program:    1162 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:24:13 Build Finished (took 63ms)
 
