@@ -1,4 +1,4 @@
-17:24:13 **** Incremental Build of configuration Debug for project lab2serial ****
+15:12:55 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 lab2serial.elf
@@ -6,7 +6,7 @@ AVR Memory Usage
 ----------------
 Device: atmega2560
 
-Program:    1162 bytes (0.4% Full)
+Program:     456 bytes (0.2% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)
@@ -16,5 +16,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-17:24:13 Build Finished (took 63ms)
+15:12:55 Build Finished (took 61ms)
 

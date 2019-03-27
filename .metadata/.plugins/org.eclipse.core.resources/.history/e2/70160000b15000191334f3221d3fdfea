@@ -62,7 +62,7 @@ int main() {
 
 
 	 a = USART_Receive();
-
+	 a++;
      USART_Transmit(a);
     // _delay_ms(1000);
 

@@ -54,18 +54,13 @@ UDR0 = data;
 
 int main() {
 
-	unsigned char a;
+
   USART_Init( MYUBRR );
 
 
   while (true) {
-
-
-	 a = USART_Receive();
-
-     USART_Transmit(a);
-    // _delay_ms(1000);
-
+  USART_Transmit(0x30);
+  _delay_ms(1000);
   }
 
 

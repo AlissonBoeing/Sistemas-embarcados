@@ -12,18 +12,18 @@
 #define BAUD 9600
 #define MYUBRR (FOSC/16/BAUD-1)
 
-
-
 void USART_Init( unsigned int ubrr){
+
 /* Set baud rate */
-UBRR0H = (unsigned char)(ubrr>>8);
-UBRR0L = (unsigned char)ubrr;
+UBRR0H = (unsigned char)(103>>8);
+UBRR0L = (unsigned char)103;
+//UBRR0 = 103;
 /* Enable receiver and transmitter */
 UCSR0B = (1<<RXEN0)|(1<<TXEN0);
 /* Set frame format: 8data, 2stop bit */
-UCSR0C = (1<<USBS0)|(3<<UCSZ00);
-}
+UCSR0C = (1<<USBS0)|(3<<UCSZ01);
 
+} // USART_Init
 
 
 unsigned char USART_Receive( void ) {
@@ -54,18 +54,13 @@ UDR0 = data;
 
 int main() {
 
-	unsigned char a;
+
   USART_Init( MYUBRR );
 
 
   while (true) {
-
-
-	 a = USART_Receive();
-
-     USART_Transmit(a);
-    // _delay_ms(1000);
-
+  USART_Transmit(0x30);
+  _delay_ms(500);
   }
 
 

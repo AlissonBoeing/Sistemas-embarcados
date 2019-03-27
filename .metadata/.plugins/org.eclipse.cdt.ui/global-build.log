@@ -1,1058 +1,313 @@
-15:08:03 **** Incremental Build of configuration Debug for project lab2serial ****
+14:02:56 **** Incremental Build of configuration Debug for project lab3adc ****
 make all 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'lab2serial.elf' failed
-make: *** [lab2serial.elf] Error 1
-15:11:13 **** Incremental Build of configuration Debug for project lab2serial ****
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:17 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
-Building file: ../serial.cpp
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:17 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:19 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:19 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:35:12 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:35:12 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:10:57 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:10:57 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:25:12: error: ‘UCSRnA’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-            ^
-../serial.cpp:25:25: error: ‘RXCn’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-                         ^
-../serial.cpp:27:9: error: ‘UDRn’ was not declared in this scope
-  return UDRn;
-         ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:28:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-make: *** [serial.o] Error 1
-subdir.mk:18: recipe for target 'serial.o' failed
-16:10:11 **** Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:25:12: error: ‘UCSRnA’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-            ^
-../serial.cpp:25:25: error: ‘RXCn’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-                         ^
-../serial.cpp:27:9: error: ‘UDRn’ was not declared in this scope
-  return UDRn;
-         ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:28:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-make: *** [serial.o] Error 1
-subdir.mk:18: recipe for target 'serial.o' failed
-16:13:18 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-subdir.mk:18: recipe for target 'serial.o' failed
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:25:12: error: ‘UCSRnA’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-            ^
-../serial.cpp:25:25: error: ‘RXCn’ was not declared in this scope
-  while ( !(UCSRnA & (1<<RXCn)));
-                         ^
-../serial.cpp:27:9: error: ‘UDRn’ was not declared in this scope
-  return UDRn;
-         ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-../serial.cpp: In function ‘unsigned char USART_Receive()’:
-../serial.cpp:28:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-make: *** [serial.o] Error 1
-16:13:30 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:17:9: error: lvalue required as left operand of assignment
-  MYUBRR = FOSC/(16*(BAUD-1));
-subdir.mk:18: recipe for target 'serial.o' failed
-         ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-make: *** [serial.o] Error 1
-16:13:47 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-subdir.mk:18: recipe for target 'serial.o' failed
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
- ^
-../serial.cpp:37:13: error: ‘RXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-             ^
-../serial.cpp:37:23: error: ‘TXEN’ was not declared in this scope
- UCSRB = (1<<RXEN)|(1<<TXEN);
-                       ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-make: *** [serial.o] Error 1
-16:14:14 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-subdir.mk:18: recipe for target 'serial.o' failed
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB0’ was not declared in this scope
- UCSRB0 = (1<<RXE0)|(1<<TXE0);
- ^
-../serial.cpp:37:14: error: ‘RXE0’ was not declared in this scope
- UCSRB0 = (1<<RXE0)|(1<<TXE0);
-              ^
-../serial.cpp:37:24: error: ‘TXE0’ was not declared in this scope
- UCSRB0 = (1<<RXE0)|(1<<TXE0);
-                        ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-make: *** [serial.o] Error 1
-16:14:44 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-subdir.mk:18: recipe for target 'serial.o' failed
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB0’ was not declared in this scope
- UCSRB0 = (1<<RXEN0)|(1<<TXEN0);
- ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ0’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ0);
-                       ^
-make: *** [serial.o] Error 1
-16:14:55 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:19: warning: integer overflow in expression [-Woverflow]
-  MYUBRR = FOSC/(16*(BAUD-1));
-                   ^
-../serial.cpp:19:21: error: ‘USART_Init’ was not declared in this scope
-  USART_Init( MYUBRR );
-                     ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB0’ was not declared in this scope
- UCSRB0 = (1<<RXEN0)|(1<<TXEN0);
-subdir.mk:18: recipe for target 'serial.o' failed
- ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
-                       ^
-make: *** [serial.o] Error 1
-16:15:04 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:16:16: warning: unused variable ‘MYUBRR’ [-Wunused-variable]
-   unsigned int MYUBRR;
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../adc.cpp: In function ‘int main()’:
+../adc.cpp:59:18: error: expected initializer before numeric constant
+  uint8_t channel 5;
+                  ^
+../adc.cpp:67:28: error: ‘channel’ was not declared in this scope
+    USART_Transmit(read_adc(channel));
+                            ^
+../adc.cpp:61:16: warning: unused variable ‘a’ [-Wunused-variable]
+  unsigned char a;
                 ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:37:1: error: ‘UCSRB0’ was not declared in this scope
-subdir.mk:18: recipe for target 'serial.o' failed
- UCSRB0 = (1<<RXEN0)|(1<<TXEN0);
- ^
-../serial.cpp:39:1: error: ‘UCSRC’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
- ^
-../serial.cpp:39:13: error: ‘USBS’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
-             ^
-../serial.cpp:39:23: error: ‘UCSZ’ was not declared in this scope
- UCSRC = (1<<USBS)|(3<<UCSZ);
-                       ^
-make: *** [serial.o] Error 1
-16:15:32 **** Incremental Build of configuration Debug for project lab2serial ****
+make: *** [adc.o] Error 1
+subdir.mk:18: recipe for target 'adc.o' failed
+15:11:14 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
-Building file: ../serial.cpp
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:11:14 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:16:16: warning: unused variable ‘MYUBRR’ [-Wunused-variable]
-   unsigned int MYUBRR;
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../adc.cpp: In function ‘int main()’:
+../adc.cpp:59:18: error: expected initializer before numeric constant
+  uint8_t channel 5;
+                  ^
+../adc.cpp:67:31: error: ‘channel’ was not declared in this scope
+    unsigned char a = read_adc(channel);
+                               ^
+../adc.cpp:61:16: warning: unused variable ‘a’ [-Wunused-variable]
+  unsigned char a;
                 ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:39:14: error: ‘USBS’ was not declared in this scope
- UCSR0C = (1<<USBS)|(3<<UCSZ);
-subdir.mk:18: recipe for target 'serial.o' failed
-              ^
-../serial.cpp:39:24: error: ‘UCSZ’ was not declared in this scope
- UCSR0C = (1<<USBS)|(3<<UCSZ);
-                        ^
-make: *** [serial.o] Error 1
-16:16:42 **** Incremental Build of configuration Debug for project lab2serial ****
+subdir.mk:18: recipe for target 'adc.o' failed
+make: *** [adc.o] Error 1
+15:11:23 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
-Building file: ../serial.cpp
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:11:23 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:16:16: warning: unused variable ‘MYUBRR’ [-Wunused-variable]
-   unsigned int MYUBRR;
-                ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     272 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:17:02 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:17:20: warning: integer overflow in expression [-Woverflow]
-   MYUBRR = FOSC/(16*(BAUD-1));
-                    ^
-../serial.cpp:19:22: error: ‘USART_Init’ was not declared in this scope
-subdir.mk:18: recipe for target 'serial.o' failed
-   USART_Init( MYUBRR );
-                      ^
-make: *** [serial.o] Error 1
-16:17:48 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:32:20: warning: integer overflow in expression [-Woverflow]
-   MYUBRR = FOSC/(16*(BAUD-1));
-                    ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     354 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:18:39 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     354 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:19:08 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:39:20: warning: integer overflow in expression [-Woverflow]
-   MYUBRR = FOSC/(16*(BAUD-1));
-                    ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     354 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:19:48 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:39:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     338 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:19:50 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     338 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:19:51 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     338 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:32:30 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     338 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:32:33 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:53:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:33:24 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:47:43 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:53:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:58:14 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:58:17 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:53:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:01:19 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:01:21 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:57:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:01:24 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:01:25 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:01:34 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:32 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     444 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:33 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:57:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-../serial.cpp:64:26: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-    if(a = USART_Receive()) {
-                          ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     458 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:35 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     458 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:36 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     458 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:04:48 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     458 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:07:00 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:12:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:57:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-../serial.cpp:64:26: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-    if(a = USART_Receive()) {
-                          ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     458 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:07:07 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
 /usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
  # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
    ^
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:13:25: warning: integer overflow in expression [-Woverflow]
- #define MYUBRR  FOSC/(16*(BAUD-1))
-                         ^
-../serial.cpp:58:15: note: in expansion of macro ‘MYUBRR’
-   USART_Init( MYUBRR );
-               ^
-Finished building: ../serial.cpp
+../adc.cpp: In function ‘int main()’:
+../adc.cpp:59:18: error: expected initializer before numeric constant
+  uint8_t channel 5;
+                  ^
+../adc.cpp:67:31: error: ‘channel’ was not declared in this scope
+    unsigned char a = read_adc(channel);
+                               ^
+subdir.mk:18: recipe for target 'adc.o' failed
+make: *** [adc.o] Error 1
+15:11:40 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
  
-Building target: lab2serial.elf
+15:11:40 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../adc.cpp: In function ‘int main()’:
+../adc.cpp:59:18: error: expected initializer before numeric constant
+  uint8_t channel 5;
+                  ^
+make: *** [adc.o] Error 1
+subdir.mk:18: recipe for target 'adc.o' failed
+15:12:00 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:01 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../adc.cpp
+ 
+Building target: lab3adc.elf
 Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
+avr-g++ -Wl,-Map,lab3adc.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab3adc.elf"  ./adc.o   
+Finished building target: lab3adc.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
+avr-objdump -h -S lab3adc.elf  >"lab3adc.lss"
+Finished building: lab3adc.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab3adc.elf  "lab3adc.hex"
+Finished building: lab3adc.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
 AVR Memory Usage
 ----------------
 Device: atmega2560
 
-Program:    1158 bytes (0.4% Full)
+Program:     552 bytes (0.2% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)
@@ -1061,431 +316,122 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
-17:12:49 **** Incremental Build of configuration Debug for project lab2serial ****
+15:12:02 **** Incremental Build of configuration Debug for project lab2serial ****
 make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../serial.cpp:13:9: error: macro names must be identifiers
- #define (MYUBRR FOSC/16/BAUD-1)
-         ^
-../serial.cpp: In function ‘int main()’:
-../serial.cpp:58:15: error: ‘MYUBRR’ was not declared in this scope
-   USART_Init( MYUBRR );
-               ^
-subdir.mk:18: recipe for target 'serial.o' failed
-make: *** [serial.o] Error 1
-17:13:39 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
  
-Building target: lab2serial.elf
+15:12:03 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     552 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:13 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:13 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     552 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:55 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:55 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../adc.cpp
+ 
+Building target: lab3adc.elf
 Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
+avr-g++ -Wl,-Map,lab3adc.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab3adc.elf"  ./adc.o   
+Finished building target: lab3adc.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
+avr-objdump -h -S lab3adc.elf  >"lab3adc.lss"
+Finished building: lab3adc.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab3adc.elf  "lab3adc.hex"
+Finished building: lab3adc.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
 AVR Memory Usage
 ----------------
 Device: atmega2560
 
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:14:40 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:14:46 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:15:56 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:16:56 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:20:19 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:21:09 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:22:06 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:22:12 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1158 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:23:19 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../serial.cpp: In function ‘void USART_Init(unsigned int)’:
-../serial.cpp:18:1: error: ‘UBRRH’ was not declared in this scope
- UBRRH = (unsigned char)(103>>8);
- ^
-../serial.cpp:19:1: error: ‘UBRRL’ was not declared in this scope
- UBRRL = (unsigned char)103;
- ^
-make: *** [serial.o] Error 1
-subdir.mk:18: recipe for target 'serial.o' failed
-17:23:28 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1162 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:23:48 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1162 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:23:52 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1162 bytes (0.4% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:24:13 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1162 bytes (0.4% Full)
+Program:    1308 bytes (0.5% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)

@@ -1,0 +1,42 @@
+15:12:55 **** Incremental Build of configuration Debug for project lab3adc ****
+make all 
+Building file: ../adc.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.cpp"
+In file included from ../adc.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../adc.cpp
+ 
+Building target: lab3adc.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,lab3adc.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab3adc.elf"  ./adc.o   
+Finished building target: lab3adc.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab3adc.elf  >"lab3adc.lss"
+Finished building: lab3adc.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab3adc.elf  "lab3adc.hex"
+Finished building: lab3adc.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab3adc.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1308 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:12:56 Build Finished (took 112ms)
+
