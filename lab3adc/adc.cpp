@@ -1,21 +1,35 @@
 #include <avr/io.h>
 #include <util/delay.h>
+#include <stdlib.h>
+
 
 #define FOSC 16000000// Clock Speed
 #define BAUD 9600
 #define MYUBRR (FOSC/16/BAUD-1)
 
-
+//char * 	dtostrf (double __val, signed char __width, unsigned char __prec, char *__s)
 
 
 uint16_t read_adc(uint8_t channel){
-ADMUX &= 0xE0;           //Clear bits MUX0-4
-ADMUX |= channel&0x07;   //Defines the new ADC channel to be read by setting bits MUX0-2
+     //Clear bits MUX0-4
+ADMUX = 0x45;   //Defines the new ADC channel to be read by setting bits MUX0-2
 ADCSRB = channel&(1<<3); //Set MUX5
 ADCSRA |= (1<<ADSC);      //Starts a new conversion
 while(ADCSRA & (1<<ADSC));  //Wait until the conversion is done
-return ADCW;}         //Returns the ADC value of the chosen channel
+return ADCW;}           //Returns the ADC value of the chosen channel
 
+void adc_init(void){
+
+//16MHz/128 = 125kHz the ADC reference clock
+
+ADCSRA |= ((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0));
+
+ADMUX |= (1<<REFS0);       //Set Voltage reference to Avcc (5v)
+
+ADCSRA |= (1<<ADEN);       //Turn on ADC
+
+ADCSRA |= (1<<ADSC);
+}     //Do an initial conversion
 
 
 void USART_Init( unsigned int ubrr){
@@ -55,23 +69,36 @@ UDR0 = data;
 }
 
 
+
+
 int main() {
 	uint8_t channel = 5;
-
+adc_init();
 	//unsigned char a;
 	USART_Init( MYUBRR );
+	char b[5];
+int i;
+	while(true) {
 
 
-
-  while (true) {
-
-	 // unsigned char a = ;
 	  _delay_ms(500);
-	  USART_Transmit(read_adc(channel));
+
+	  uint16_t a = read_adc(channel);
+
+	  itoa(a, b, 10);
+
+	 // dtostrf(a,3,1,b);
+	  i = 0;
+
+	  while(b[i] != 0){
+		  USART_Transmit(b[i]);
+		  i++;
+	  }
 
 
 
-  }
+
+ }
 
 
 
