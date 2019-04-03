@@ -442,3 +442,91 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
+15:15:21 **** Incremental Build of configuration Debug for project GPIO ****
+make all 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
+In file included from ../GPIO.h:9:0,
+                 from ../GPIO.cpp:8:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../GPIO.cpp
+ 
+Building target: GPIO.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
+makefile:62: recipe for target 'GPIO.elf' failed
+collect2: error: ld returned 1 exit status
+make: *** [GPIO.elf] Error 1
+15:15:22 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:15:24 **** Incremental Build of configuration Debug for project GPIO ****
+make all 
+Building target: GPIO.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+makefile:62: recipe for target 'GPIO.elf' failed
+make: *** [GPIO.elf] Error 1
+15:15:24 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:15:27 **** Incremental Build of configuration Debug for project GPIO ****
+make all 
+Building target: GPIO.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+makefile:62: recipe for target 'GPIO.elf' failed
+make: *** [GPIO.elf] Error 1
+15:15:27 **** Incremental Build of configuration Debug for project lab2serial ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:     456 bytes (0.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
