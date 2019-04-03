@@ -1,0 +1,50 @@
+/*
+ * GPIO.cpp
+ *
+ *  Created on: 03/04/2019
+ *      Author: aluno
+ */
+
+#include "GPIO.h"
+
+
+
+enum PortDirection_t {
+			INPUT = 0,
+			OUTPUT=1
+		};
+
+
+
+
+GPIO::GPIO(uint8_t id,  PortDirection_t dir ){
+
+	switch (id) {
+	case 2: //PE4
+		_id = id;
+
+	break;
+	case 3: //PE5
+		_id = id;
+	break;
+	case 4: //PG5
+	break;
+	case 5: //PE3
+	break;
+	case 6: //PH3
+	break;
+	case 7: //PH4
+	break;
+	case 8: //PH5
+	break;
+	case 9: //PH6
+	break;
+
+	}
+
+}
+
+
+
+
+
