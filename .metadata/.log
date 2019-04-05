@@ -204,3 +204,12 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/lab3adc/Debug/
 
 !ENTRY org.eclipse.osgi 2 1 2019-04-03 14:23:50.889
 !MESSAGE NLS unused message: CleanFilesHandler_cleanSelectedFiles in: org.eclipse.cdt.managedbuilder.internal.ui.commands.Messages
+!SESSION 2019-04-05 15:51:25.785 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_212
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-04-05 15:51:45.682
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

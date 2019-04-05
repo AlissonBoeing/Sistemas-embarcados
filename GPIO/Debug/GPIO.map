@@ -12,12 +12,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./GPIO.o
  .data          0x0000000000000000        0x0 ./GPIO.o
  .bss           0x0000000000000000        0x0 ./GPIO.o
- .stab          0x0000000000000000      0x720 ./GPIO.o
+ .stab          0x0000000000000000      0x7b0 ./GPIO.o
  .text._ZN4GPIOC2EhNS_15PortDirection_tE
-                0x0000000000000000      0x1a2 ./GPIO.o
+                0x0000000000000000      0x252 ./GPIO.o
  .progmem.gcc_sw_table._ZN4GPIOC2EhNS_15PortDirection_tE
                 0x0000000000000000       0x10 ./GPIO.o
- .text._ZN4GPIO7setModeENS_15PortDirection_tE
+ .text._ZN4GPIO4readEv
+                0x0000000000000000       0x1a ./GPIO.o
+ .text._ZN4GPIO5writeEb
                 0x0000000000000000       0x1c ./GPIO.o
  .comment       0x0000000000000000       0x12 ./GPIO.o
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.9.2/avr6/libgcc.a(_exit.o)
@@ -366,9 +368,9 @@ END GROUP
 .stab
  *(.stab)
 
-.stabstr        0x0000000000000000      0xd6a
+.stabstr        0x0000000000000000      0xda5
  *(.stabstr)
- .stabstr       0x0000000000000000      0xd6a ./GPIO.o
+ .stabstr       0x0000000000000000      0xda5 ./GPIO.o
 
 .stab.excl
  *(.stab.excl)
@@ -458,7 +460,8 @@ LOAD linker stubs
 Cross Reference Table
 
 Symbol                                            File
-_ZN4GPIO7setModeENS_15PortDirection_tE            ./GPIO.o
+_ZN4GPIO4readEv                                   ./GPIO.o
+_ZN4GPIO5writeEb                                  ./GPIO.o
 _ZN4GPIOC1EhNS_15PortDirection_tE                 ./GPIO.o
 _ZN4GPIOC2EhNS_15PortDirection_tE                 ./GPIO.o
 __bad_interrupt                                   /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o

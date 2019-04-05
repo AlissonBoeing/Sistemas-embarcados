@@ -26,11 +26,12 @@ class GPIO {
 		void write(bool val);
 		void toggle();
 		void setMode(PortDirection_t dir);
-
 	private:
 		uint8_t _id;
 		uint8_t _bit;
-		char _port;
+		volatile uint8_t * _port;
+		volatile uint8_t * _ddr;
+		volatile uint8_t *_pin;
 
 };
 

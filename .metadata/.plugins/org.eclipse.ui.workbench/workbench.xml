@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
 <window height="720" maximized="true" width="1030" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -18,6 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="212" y="26"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.make.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -29,13 +30,33 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="adc.cpp" partName="adc.cpp" path="/home/aluno/Sistemas-embarcados/lab3adc/adc.cpp" title="adc.cpp" tooltip="lab3adc/adc.cpp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab3adc/adc.cpp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="405" selectionTopPixel="16"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.cpp" partName="GPIO.cpp" path="/home/aluno/Sistemas-embarcados/GPIO/GPIO.cpp" title="GPIO.cpp" tooltip="GPIO/GPIO.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GPIO/GPIO.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1063" selectionTopPixel="969"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.h" partName="GPIO.h" path="/home/aluno/Sistemas-embarcados/GPIO/GPIO.h" title="GPIO.h" tooltip="GPIO/GPIO.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GPIO/GPIO.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="359" selectionTopPixel="54"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="io.h" partName="io.h" title="io.h" tooltip="/usr/lib/avr/include/avr/io.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/io.h" project="GPIO"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6092" selectionTopPixel="1848"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="iom2560.h" partName="iom2560.h" title="iom2560.h" tooltip="/usr/lib/avr/include/avr/iom2560.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/iom2560.h" project="GPIO"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1725" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="iomxx0_1.h" partName="iomxx0_1.h" title="iomxx0_1.h" tooltip="/usr/lib/avr/include/avr/iomxx0_1.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/iomxx0_1.h" project="GPIO"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="4988" selectionTopPixel="2445"/>
 </editor>
 </editors>
 <views>
@@ -90,9 +111,9 @@
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
 <perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
@@ -119,7 +140,7 @@
 </folder>
 </info>
 <info part="org.eclipse.gef.ui.palette_view" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6594324" ratioLeft="395" ratioRight="204" relationship="4" relative="org.eclipse.gef.ui.palette_view">
+<info folder="true" part="bottomRight" ratio="0.6934673" ratioLeft="414" ratioRight="183" relationship="4" relative="org.eclipse.gef.ui.palette_view">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -147,40 +168,161 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab3adc/adc.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPIO/GPIO.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPIO/GPIO.h"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/io.h" project="GPIO"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/iom2560.h" project="GPIO"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/iomxx0_1.h" project="GPIO"/>
 </editors>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1738" y="0"/>
-</item>
-<item historyLabel="adc.cpp" index="0">
+<item historyLabel="GPIO.cpp" index="0">
 <position/>
 </item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1813" y="0"/>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="480" y="0"/>
 </item>
-<item historyLabel="adc.cpp" index="0">
+<item historyLabel="GPIO.cpp" index="0">
 <position/>
 </item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1459" y="0"/>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="480" y="0"/>
 </item>
-<item historyLabel="adc.cpp" index="0">
+<item historyLabel="GPIO.cpp" index="0">
 <position/>
 </item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1709" y="0"/>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="480" y="0"/>
 </item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1777" y="21"/>
+<item historyLabel="GPIO.cpp" index="0">
+<position/>
 </item>
-<item historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1770" y="0"/>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="480" y="0"/>
 </item>
-<item active="true" historyLabel="adc.cpp" index="0">
-<position info="not_deleted" x="1560" y="0"/>
+<item historyLabel="GPIO.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="453" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="453" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="193" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="436" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="84" y="0"/>
+</item>
+<item historyLabel="io.h" index="2">
+<position info="not_deleted" x="6092" y="0"/>
+</item>
+<item historyLabel="iom2560.h" index="3">
+<position info="not_deleted" x="1725" y="0"/>
+</item>
+<item historyLabel="iomxx0_1.h" index="4">
+<position info="not_deleted" x="4990" y="5"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="84" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="197" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="434" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="iomxx0_1.h" index="4">
+<position info="not_deleted" x="4988" y="24"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="426" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="205" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="426" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="193" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="372" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="193" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="372" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="372" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="373" y="0"/>
+</item>
+<item historyLabel="iom2560.h" index="3">
+<position info="not_deleted" x="1725" y="0"/>
+</item>
+<item historyLabel="io.h" index="2">
+<position info="not_deleted" x="6092" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="1061" y="0"/>
+</item>
+<item historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="359" y="0"/>
+</item>
+<item historyLabel="GPIO.cpp" index="0">
+<position info="not_deleted" x="1063" y="0"/>
+</item>
+<item active="true" historyLabel="GPIO.h" index="1">
+<position info="not_deleted" x="359" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -199,6 +341,24 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="iomxx0_1.h" tooltip="/usr/lib/avr/include/avr/iomxx0_1.h">
+<persistable path="/usr/lib/avr/include/avr/iomxx0_1.h" project="GPIO"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="iom2560.h" tooltip="/usr/lib/avr/include/avr/iom2560.h">
+<persistable path="/usr/lib/avr/include/avr/iom2560.h" project="GPIO"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="io.h" tooltip="/usr/lib/avr/include/avr/io.h">
+<persistable path="/usr/lib/avr/include/avr/io.h" project="GPIO"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.h" tooltip="GPIO/GPIO.h">
+<persistable path="/GPIO/GPIO.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="makefile" tooltip="GPIO/Debug/makefile">
+<persistable path="/GPIO/Debug/makefile"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.cpp" tooltip="GPIO/GPIO.cpp">
+<persistable path="/GPIO/GPIO.cpp"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc.cpp" tooltip="lab3adc/adc.cpp">
 <persistable path="/lab3adc/adc.cpp"/>
 </file>
