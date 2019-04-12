@@ -1,0 +1,42 @@
+17:06:44 **** Incremental Build of configuration Debug for project lab6interrupt ****
+make all 
+Building file: ../lab6interrupt.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
+In file included from ../lab6interrupt.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../lab6interrupt.cpp
+ 
+Building target: lab6interrupt.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
+Finished building target: lab6interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
+Finished building: lab6interrupt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
+Finished building: lab6interrupt.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1290 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:06:44 Build Finished (took 109ms)
+

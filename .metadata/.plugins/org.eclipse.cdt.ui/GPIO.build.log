@@ -1,4 +1,4 @@
-17:28:06 **** Incremental Build of configuration Debug for project GPIO ****
+16:24:03 **** Incremental Build of configuration Debug for project GPIO ****
 make all 
 Building file: ../GPIO.cpp
 Invoking: AVR C++ Compiler
@@ -14,15 +14,15 @@ In file included from ../GPIO.h:9:0,
                ^
 ../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
 ../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
+subdir.mk:18: recipe for target 'GPIO.o' failed
   else _ddr &= ~(1<<_bit);
             ^
 ../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-subdir.mk:18: recipe for target 'GPIO.o' failed
 ../GPIO.cpp: In member function ‘bool GPIO::read()’:
 ../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
 make: *** [GPIO.o] Error 1
 
-17:28:06 Build Finished (took 60ms)
+16:24:03 Build Finished (took 58ms)
 
