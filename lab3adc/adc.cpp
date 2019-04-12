@@ -7,9 +7,6 @@
 #define BAUD 9600
 #define MYUBRR (FOSC/16/BAUD-1)
 
-//char * 	dtostrf (double __val, signed char __width, unsigned char __prec, char *__s)
-
-
 uint16_t read_adc(uint8_t channel){
      //Clear bits MUX0-4
 ADMUX = 0x45;   //Defines the new ADC channel to be read by setting bits MUX0-2
@@ -69,31 +66,81 @@ UDR0 = data;
 }
 
 
+float RMS(int repeat) {
 
+	uint8_t channel = 5;
+	int i;
+  i = 0;
+  float valores[repeat];
+  while(i < repeat) {
+
+  uint16_t a = read_adc(channel);
+
+  valores[i] = a;
+
+  i = i + 1;
+  }
+  i = 0;
+ float acumulado = 0;
+  while(i<repeat){
+    acumulado = acumulado + (valores[i]*valores[i]);
+    i = i + 1;
+  }
+  acumulado = acumulado/repeat;
+
+  return sqrt(acumulado);
+
+}
 
 int main() {
-	uint8_t channel = 5;
-adc_init();
+	adc_init();
+
+
+
+
+
 	//unsigned char a;
 	USART_Init( MYUBRR );
 	char b[5];
-int i;
+	char analogico[15] = "\nAnalogico:\n" ;
+	char digital[15] = "\nDigital:\n";
+	uint16_t c;
+	char d[5];
+
 	while(true) {
+		int i = 0;
 
 
-	  _delay_ms(500);
+	//	USART_Transmit(analogico[i]);
+	//int i = 0;
 
-	  uint16_t a = read_adc(channel);
-
+	  uint16_t a = RMS(30);
 	  itoa(a, b, 10);
 
-	 // dtostrf(a,3,1,b);
+	  while(analogico[i] != 0){
+	  		  USART_Transmit(analogico[i]);
+	  		  i++;
+	  	  }
 	  i = 0;
-
 	  while(b[i] != 0){
 		  USART_Transmit(b[i]);
 		  i++;
 	  }
+
+	  while(digital[i] != 0){
+		 USART_Transmit(digital[i]);
+		 i++;
+	  }
+		  i = 0;
+
+		  c = ((5.0*a)/1023.0);
+
+		  itoa(c, d, 10);
+
+		  while(d[i] != 0){
+		  		 USART_Transmit(d[i]);
+		  		 i++;
+		  	  }
 
 
 
