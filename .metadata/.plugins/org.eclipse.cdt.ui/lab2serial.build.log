@@ -1,5 +1,27 @@
-16:24:04 **** Incremental Build of configuration Debug for project lab2serial ****
+15:12:20 **** Build of configuration Debug for project lab2serial ****
 make all 
+Building file: ../serial.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
+In file included from ../serial.cpp:2:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../serial.cpp
+ 
+Building target: lab2serial.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
+Finished building target: lab2serial.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
+Finished building: lab2serial.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
+Finished building: lab2serial.hex
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 lab2serial.elf
 AVR Memory Usage
@@ -16,5 +38,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-16:24:04 Build Finished (took 58ms)
+15:12:21 Build Finished (took 123ms)
 

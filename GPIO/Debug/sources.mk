@@ -30,5 +30,10 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-. \
+__MACOSX/GPIO_v2 \
+__MACOSX/GPIO_v1 \
+GPIO_v2 \
+GPIO_v1.3 \
+GPIO_v1.2 \
+GPIO_v1 \
 

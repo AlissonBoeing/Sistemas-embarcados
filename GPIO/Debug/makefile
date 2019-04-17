@@ -8,6 +8,12 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include __MACOSX/GPIO_v2/subdir.mk
+-include __MACOSX/GPIO_v1/subdir.mk
+-include GPIO_v2/subdir.mk
+-include GPIO_v1.3/subdir.mk
+-include GPIO_v1.2/subdir.mk
+-include GPIO_v1/subdir.mk
 -include subdir.mk
 -include objects.mk
 

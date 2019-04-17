@@ -1,0 +1,18 @@
+/*
+ * UART.cpp
+ *
+ *  Created on: 17/04/2019
+ *      Author: aluno
+ */
+#include "UART.h"
+
+#define FOSC 16000000
+
+UART::UART(uint32_t baud, UART::DATABITS_t db, UART::PARITY_t parity, UART::STOPBITS_t sb) {
+
+
+
+}
+
+
+

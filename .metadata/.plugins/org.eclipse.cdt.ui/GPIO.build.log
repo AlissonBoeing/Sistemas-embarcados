@@ -1,28 +1,163 @@
-16:24:03 **** Incremental Build of configuration Debug for project GPIO ****
+15:12:17 **** Build of configuration Debug for project GPIO ****
 make all 
-Building file: ../GPIO.cpp
+Building file: ../__MACOSX/GPIO_v2/._main.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-subdir.mk:18: recipe for target 'GPIO.o' failed
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"__MACOSX/GPIO_v2/._main.d" -MT"__MACOSX/GPIO_v2/._main.d" -c -o "__MACOSX/GPIO_v2/._main.o" "../__MACOSX/GPIO_v2/._main.cpp"
+../__MACOSX/GPIO_v2/._main.cpp:1:1: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
  ^
-make: *** [GPIO.o] Error 1
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\5’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\26’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\7’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:5: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+     ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\2’ in program
+__MACOSX/GPIO_v2/subdir.mk:18: recipe for target '__MACOSX/GPIO_v2/._main.o' failed
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:7: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+       ^
+../__MACOSX/GPIO_v2/._main.cpp:1:17: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                 ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\2’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:27: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                           ^
+../__MACOSX/GPIO_v2/._main.cpp:1:35: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                   ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\325’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:39: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                       ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\2’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:43: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                           ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\1’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\7’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:47: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                               ^
+../__MACOSX/GPIO_v2/._main.cpp:1:89: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\1’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\7’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:97: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                 ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\364’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:101: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                     ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\23’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:105: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\3’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:121: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\364’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:125: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                             ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\20’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:129: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                 ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\32’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:154: error: stray ‘#’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                          ^
+../__MACOSX/GPIO_v2/._main.cpp:1:157: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                             ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\1’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\4’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:165: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                     ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\2’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:169: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\36’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:201: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\1’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\6’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:209: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                                 ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\1’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:213: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                                     ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\34’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:243: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                                                                   ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\256’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:249: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                                                                         ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\271’ in program
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+  ^
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\214’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:2: error: stray ‘\22’ in program
+../__MACOSX/GPIO_v2/._main.cpp:1:257: warning: null character(s) ignored
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+                                                                                                                                                                                                                                                                 ^
+../__MACOSX/GPIO_v2/._main.cpp:1:9: error: ‘Mac’ does not name a type
+     Mac OS X                2   �                                           ATTR         �                     �     com.apple.lastuseddate#PS           com.macromates.selectionRange           com.macromates.visibleIndex  m7�\    ��-    440
+         ^
+make: *** [__MACOSX/GPIO_v2/._main.o] Error 1
 
-16:24:03 Build Finished (took 58ms)
+15:12:18 Build Finished (took 530ms)
 

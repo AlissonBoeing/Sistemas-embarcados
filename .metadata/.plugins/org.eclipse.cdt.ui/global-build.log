@@ -1,84 +1,48 @@
-
-**** Build of configuration Debug for project GPIO ****
-
-Nothing to build for project GPIO
-14:27:58 **** Incremental Build of configuration Debug for project GPIO ****
+15:12:49 **** Build of configuration Debug for project UART ****
 make all 
-Building file: ../GPIO.cpp
+Building file: ../UART.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-Finished building: ../GPIO.cpp
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART.d" -MT"UART.d" -c -o "UART.o" "../UART.cpp"
+In file included from ../UART.h:8:0,
+                 from ../UART.cpp:7:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../UART.cpp
  
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-makefile:62: recipe for target 'GPIO.elf' failed
-14:27:59 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:28:28 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-14:28:29 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:48:11 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
+Building file: ../main.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-../GPIO.cpp:8:18: fatal error: GPIO.h: Arquivo ou diretório não encontrado
- #include <GPIO.h>
-subdir.mk:18: recipe for target 'GPIO.o' failed
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
                   ^
-compilation terminated.
-make: *** [GPIO.o] Error 1
-14:48:11 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
+In file included from ../UART.h:8:0,
+                 from ../main.cpp:7:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../main.cpp
+ 
+Building target: UART.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
+avr-size --format=avr --mcu=atmega2560 UART.elf
 AVR Memory Usage
 ----------------
 Device: atmega2560
 
-Program:     456 bytes (0.2% Full)
+Program:    1366 bytes (0.5% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)
@@ -87,1777 +51,40 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
-14:48:43 **** Incremental Build of configuration Debug for project GPIO ****
+15:14:50 **** Incremental Build of configuration Debug for project UART ****
 make all 
-Building file: ../GPIO.cpp
+Building file: ../UART.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-../GPIO.cpp:8:18: fatal error: GPIO.h: Arquivo ou diretório não encontrado
- #include <GPIO.h>
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART.d" -MT"UART.d" -c -o "UART.o" "../UART.cpp"
+Finished building: ../UART.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
                   ^
-compilation terminated.
-subdir.mk:18: recipe for target 'GPIO.o' failed
-make: *** [GPIO.o] Error 1
-14:48:43 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:48:50 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-../GPIO.cpp:8:18: fatal error: GPIO.h: Arquivo ou diretório não encontrado
- #include <GPIO.h>
-                  ^
-compilation terminated.
-make: *** [GPIO.o] Error 1
-subdir.mk:18: recipe for target 'GPIO.o' failed
-14:48:50 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:49:33 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-../GPIO.cpp:8:18: fatal error: GPIO.h: Arquivo ou diretório não encontrado
-subdir.mk:18: recipe for target 'GPIO.o' failed
- #include <GPIO.h>
-                  ^
-compilation terminated.
-make: *** [GPIO.o] Error 1
-14:49:34 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:50:42 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
+In file included from ../main.cpp:8:0:
 /usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
  # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
    ^
-subdir.mk:18: recipe for target 'GPIO.o' failed
-../GPIO.cpp:19:16: error: ‘namespace GPIO { }’ redeclared as different kind of symbol
- namespace GPIO {
-                ^
-In file included from ../GPIO.cpp:8:0:
-../GPIO.h:14:7: note: previous declaration ‘class GPIO’
- class GPIO {
-       ^
-../GPIO.cpp:22:45: error: definition of ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’ is not in namespace enclosing ‘GPIO’ [-fpermissive]
- GPIO::GPIO(uint8_t id,  PortDirection_t dir ){
-                                             ^
-make: *** [GPIO.o] Error 1
-14:50:42 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
+Finished building: ../main.cpp
  
-14:51:06 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
+Building target: UART.elf
 Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-14:51:06 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:33 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-14:51:34 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:52:15 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-14:52:15 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:52:16 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-14:52:17 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:38 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-14:53:38 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:46 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-makefile:62: recipe for target 'GPIO.elf' failed
-14:53:46 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:54:14 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-makefile:62: recipe for target 'GPIO.elf' failed
-14:54:14 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:21 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-15:15:22 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:24 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-15:15:24 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:27 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-15:15:27 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:52:16 **** Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-15:52:17 **** Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+Finished building target: UART.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:52:38 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:56:47 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:57:22 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:57:25 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:57:27 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:57:45 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-16:57:46 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-17:10:54 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘char’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:3: error: ‘_ddr’ was not declared in this scope
-   _ddr = &DDRE;
-   ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-subdir.mk:18: recipe for target 'GPIO.o' failed
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:11:15 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp:25:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'E';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'G';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:50:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:56:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:12:11 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
-subdir.mk:18: recipe for target 'GPIO.o' failed
- }
- ^
-make: *** [GPIO.o] Error 1
-17:12:30 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
-subdir.mk:18: recipe for target 'GPIO.o' failed
- ^
-make: *** [GPIO.o] Error 1
-17:12:35 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
-subdir.mk:18: recipe for target 'GPIO.o' failed
- }
- ^
-make: *** [GPIO.o] Error 1
-17:12:48 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-subdir.mk:18: recipe for target 'GPIO.o' failed
-make: *** [GPIO.o] Error 1
-17:12:55 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
-subdir.mk:18: recipe for target 'GPIO.o' failed
- }
- ^
-make: *** [GPIO.o] Error 1
-17:13:32 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char*’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:18:8: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘uint8_t {aka unsigned char}’ [-fpermissive]
-   _ddr = &DDRE;
-        ^
-../GPIO.cpp:19:3: error: ‘_’ was not declared in this scope
-   _
-   ^
-../GPIO.cpp:25:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'G';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:50:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:56:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:13:50 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char*’ [-fpermissive]
-   _port = &PORTE
-         ^
-../GPIO.cpp:18:2: error: expected ‘;’ before ‘break’
-  break;
-  ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:13:56 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘volatile uint8_t* {aka volatile unsigned char*}’ to ‘unsigned char*’ [-fpermissive]
-   _port = &PORTE;
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-subdir.mk:18: recipe for target 'GPIO.o' failed
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:14:11 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘uint8_t {aka unsigned char}’ to ‘unsigned char*’ [-fpermissive]
-   _port = PORTE;
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:14:41 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-In file included from /usr/lib/avr/include/avr/io.h:99:0,
-                 from ../GPIO.h:8,
-                 from ../GPIO.cpp:8:
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:13: error: invalid type argument of unary ‘*’ (have ‘uint8_t {aka unsigned char}’)
-   _port = * PORTE;
-             ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-subdir.mk:18: recipe for target 'GPIO.o' failed
-make: *** [GPIO.o] Error 1
-17:14:46 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘uint8_t {aka unsigned char}’ to ‘unsigned char*’ [-fpermissive]
-   _port = PORTE;
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘unsigned char*’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:15:04 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘uint8_t {aka unsigned char}’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = PORTE;
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:15:07 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:17:9: error: invalid conversion from ‘uint8_t {aka unsigned char}’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = PORTE;
-         ^
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-subdir.mk:18: recipe for target 'GPIO.o' failed
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘uint8_t* {aka unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:17:34 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:30:9: error: invalid conversion from ‘char’ to ‘volatile uint8_t* {aka volatile unsigned char*}’ [-fpermissive]
-   _port = 'E';
-         ^
-../GPIO.cpp:35:9: error: invalid conversion from ‘char’ to ‘volatile uint8_t* {aka volatile unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:40:9: error: invalid conversion from ‘char’ to ‘volatile uint8_t* {aka volatile unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:45:9: error: invalid conversion from ‘char’ to ‘volatile uint8_t* {aka volatile unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-../GPIO.cpp:51:9: error: invalid conversion from ‘char’ to ‘volatile uint8_t* {aka volatile unsigned char*}’ [-fpermissive]
-   _port = 'H';
-         ^
-subdir.mk:18: recipe for target 'GPIO.o' failed
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:61:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:19:15 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:79:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:62: recipe for target 'GPIO.elf' failed
-make: *** [GPIO.elf] Error 1
-17:27:16 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:79:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-Finished building: ../GPIO.cpp
- 
-Building target: GPIO.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,GPIO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "GPIO.elf"  ./GPIO.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:62: recipe for target 'GPIO.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [GPIO.elf] Error 1
-17:27:18 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In constructor ‘GPIO::GPIO(uint8_t, GPIO::PortDirection_t)’:
-../GPIO.cpp:20:31: error: no matching function for call to ‘GPIO::setMode(GPIO::PortDirection_t&, volatile uint8_t*&, uint8_t&)’
-   this->setMode(dir,_ddr, _bit);
-                               ^
-../GPIO.cpp:20:31: note: candidate is:
-subdir.mk:18: recipe for target 'GPIO.o' failed
-In file included from ../GPIO.cpp:8:0:
-../GPIO.h:28:8: note: void GPIO::setMode(GPIO::PortDirection_t)
-   void setMode(PortDirection_t dir);
-        ^
-../GPIO.h:28:8: note:   candidate expects 1 argument, 3 provided
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:27:45 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-subdir.mk:18: recipe for target 'GPIO.o' failed
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:27:47 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
-subdir.mk:18: recipe for target 'GPIO.o' failed
- ^
-make: *** [GPIO.o] Error 1
-17:27:57 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-subdir.mk:18: recipe for target 'GPIO.o' failed
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:28:04 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-subdir.mk:18: recipe for target 'GPIO.o' failed
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-17:28:06 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-subdir.mk:18: recipe for target 'GPIO.o' failed
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-16:07:34 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-subdir.mk:18: recipe for target 'GPIO.o' failed
-make: *** [GPIO.o] Error 1
-16:07:34 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Building file: ../serial.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"serial.d" -MT"serial.d" -c -o "serial.o" "../serial.cpp"
-In file included from ../serial.cpp:9:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../serial.cpp
- 
-Building target: lab2serial.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab2serial.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab2serial.elf"  ./serial.o   
-Finished building target: lab2serial.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab2serial.elf  >"lab2serial.lss"
-Finished building: lab2serial.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab2serial.elf  "lab2serial.hex"
-Finished building: lab2serial.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:07:35 **** Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     332 bytes (0.1% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:03 **** Incremental Build of configuration Debug for project GPIO ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-In file included from ../GPIO.h:9:0,
-                 from ../GPIO.cpp:8:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../GPIO.cpp: In member function ‘void GPIO::setMode(GPIO::PortDirection_t)’:
-../GPIO.cpp:81:15: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator|’
-  if(dir) _ddr |= (1<<_bit);
-               ^
-../GPIO.cpp:81:15: error:   in evaluation of ‘operator|=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp:82:12: error: invalid operands of types ‘volatile uint8_t* {aka volatile unsigned char*}’ and ‘int’ to binary ‘operator&’
-subdir.mk:18: recipe for target 'GPIO.o' failed
-  else _ddr &= ~(1<<_bit);
-            ^
-../GPIO.cpp:82:12: error:   in evaluation of ‘operator&=(volatile uint8_t* {aka volatile unsigned char*}, int)’
-../GPIO.cpp: In member function ‘bool GPIO::read()’:
-../GPIO.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-make: *** [GPIO.o] Error 1
-16:24:04 **** Incremental Build of configuration Debug for project lab2serial ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab2serial.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     456 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:04 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:20 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:22 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:22 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:24 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:24:32 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     424 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:29:15 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../lab6interrupt.cpp:4:18: fatal error: time.h: Arquivo ou diretório não encontrado
- #include <time.h>
-subdir.mk:18: recipe for target 'lab6interrupt.o' failed
-                  ^
-compilation terminated.
-make: *** [lab6interrupt.o] Error 1
-16:29:53 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-../lab6interrupt.cpp:5:18: fatal error: time.h: Arquivo ou diretório não encontrado
- #include <time.h>
-subdir.mk:18: recipe for target 'lab6interrupt.o' failed
-                  ^
-compilation terminated.
-make: *** [lab6interrupt.o] Error 1
-16:34:02 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1290 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:34:04 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1290 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:34:48 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1290 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:06:44 **** Incremental Build of configuration Debug for project lab6interrupt ****
-make all 
-Building file: ../lab6interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab6interrupt.d" -MT"lab6interrupt.d" -c -o "lab6interrupt.o" "../lab6interrupt.cpp"
-In file included from ../lab6interrupt.cpp:2:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab6interrupt.cpp
- 
-Building target: lab6interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab6interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab6interrupt.elf"  ./lab6interrupt.o   
-Finished building target: lab6interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab6interrupt.elf  >"lab6interrupt.lss"
-Finished building: lab6interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6interrupt.elf  "lab6interrupt.hex"
-Finished building: lab6interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab6interrupt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1290 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:06:44 **** Build of configuration Debug for project lab7interrupt ****
-make all 
-Building file: ../lab7interrupt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"lab7interrupt.d" -MT"lab7interrupt.d" -c -o "lab7interrupt.o" "../lab7interrupt.cpp"
-In file included from ../lab7interrupt.cpp:12:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../lab7interrupt.cpp
- 
-Building target: lab7interrupt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,lab7interrupt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "lab7interrupt.elf"  ./lab7interrupt.o   
-Finished building target: lab7interrupt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab7interrupt.elf  >"lab7interrupt.lss"
-Finished building: lab7interrupt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab7interrupt.elf  "lab7interrupt.hex"
-Finished building: lab7interrupt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 lab7interrupt.elf
+avr-size --format=avr --mcu=atmega2560 UART.elf
 AVR Memory Usage
 ----------------
 Device: atmega2560
@@ -1871,3 +98,164 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
+15:16:06 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1336 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:19:04 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
+                  ^
+In file included from ../main.cpp:8:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../main.cpp
+ 
+Building target: UART.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1476 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:19:05 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1476 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:20:02 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
+                  ^
+In file included from ../main.cpp:8:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../main.cpp
+ 
+Building target: UART.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1468 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:20:05 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1468 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:20:41 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
+                  ^
+In file included from ../main.cpp:8:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.cpp: In function ‘int main()’:
+../main.cpp:15:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i = 0;
+      ^
+Finished building: ../main.cpp
+ 
+Building target: UART.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+./main.o: In function `main':
+../main.cpp:18: undefined reference to `UART::~UART()'
+collect2: error: ld returned 1 exit status
+makefile:62: recipe for target 'UART.elf' failed
+make: *** [UART.elf] Error 1

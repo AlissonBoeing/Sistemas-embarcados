@@ -1,4 +1,4 @@
-17:06:44 **** Incremental Build of configuration Debug for project lab6interrupt ****
+15:12:21 **** Build of configuration Debug for project lab6interrupt ****
 make all 
 Building file: ../lab6interrupt.cpp
 Invoking: AVR C++ Compiler
@@ -38,5 +38,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-17:06:44 Build Finished (took 109ms)
+15:12:22 Build Finished (took 175ms)
 
