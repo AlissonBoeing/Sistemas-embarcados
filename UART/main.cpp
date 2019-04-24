@@ -9,19 +9,19 @@
 
 int main() {
 
-	UART uart = UART(9600, UART::DATABITS_8, UART::NONE, UART::STOPBIT_2);
+	UART uart(9600, UART::DATABITS_8, UART::NONE, UART::STOPBIT_2);
 
 
 	int i = 0;
 
-	//while(true) {
-		uart.puts("alisson");
+	while(true) {
+		uart.put(i);
 
-		//_delay_ms(500);
+		_delay_ms(500);
 
-		//i++;
+		i++;
 
-	//}
+	}
 
 
 

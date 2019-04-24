@@ -35,16 +35,11 @@ public:
 	void put(uint8_t data);
 	void puts(const char * data);
 	uint8_t get();
-	bool has_data();
 
-	static void rxc_isr_handler();
-	static void udre_isr_handler();
+
 
 private:
 
-	static bool _has_data;
-	static uint8_t _rx_buffer;
-	static uint8_t _tx_buffer;
 
 };
 

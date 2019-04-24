@@ -20,7 +20,7 @@ UART::UART(uint32_t baud, UART::DATABITS_t db, UART::PARITY_t parity, UART::STOP
 	UCSR0C = db | parity | sb;
 
 }
-
+UART::~UART() {}
 void UART::put(uint8_t data) {
 
 	//while (!( UCSR0A & (1<<UDRE0))) ;
