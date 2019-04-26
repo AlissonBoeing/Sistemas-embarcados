@@ -1,0 +1,24 @@
+!SESSION 2019-04-26 16:30:49.508 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_212
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:22.222
+!MESSAGE Indexed 'GPIO_v1' (2 sources, 15 headers) in 0,568 sec: 182 declarations; 764 references; 0 unresolved inclusions; 1 syntax errors; 25 unresolved names (2,6%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:22.497
+!MESSAGE Indexed 'GPIO_v3' (3 sources, 17 headers) in 0,271 sec: 244 declarations; 743 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:22.698
+!MESSAGE Indexed 'GPIO_v1.3' (3 sources, 17 headers) in 0,198 sec: 228 declarations; 631 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:22.865
+!MESSAGE Indexed 'GPIO_v2' (3 sources, 17 headers) in 0,165 sec: 237 declarations; 656 references; 0 unresolved inclusions; 1 syntax errors; 31 unresolved names (3,4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:23.023
+!MESSAGE Indexed 'GPIO_v1.2' (2 sources, 16 headers) in 0,14 sec: 187 declarations; 668 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-26 16:31:23.178
+!MESSAGE Indexed 'GPIO_v3_progmem' (3 sources, 17 headers) in 0,151 sec: 244 declarations; 743 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)

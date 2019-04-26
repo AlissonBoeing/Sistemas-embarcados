@@ -1,0 +1,20 @@
+17:02:27 **** Incremental Build of configuration Debug for project GPIO_v2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 GPIO_v2.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    2446 bytes (0.9% Full)
+(.text + .data + .bootloader)
+
+Data:         54 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:02:27 Build Finished (took 65ms)
+

@@ -40,8 +40,8 @@
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="io.h" partName="io.h" title="io.h" tooltip="/usr/lib/avr/include/avr/io.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/io.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3839" selectionTopPixel="1425"/>
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/io.h" project="UART2"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3839" selectionTopPixel="990"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="iom2560.h" partName="iom2560.h" title="iom2560.h" tooltip="/usr/lib/avr/include/avr/iom2560.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/usr/lib/avr/include/avr/iom2560.h" project="GPIO"/>
@@ -59,6 +59,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (2 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="295" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -281,7 +284,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPIO/GPIO.h"/>
 <editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/iomxx0_1.h" project="GPIO"/>
 <editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/iom2560.h" project="GPIO"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/io.h"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usr/lib/avr/include/avr/io.h" project="UART2"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/lab6interrupt/lab6interrupt"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab2serial/serial.cpp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6interrupt/lab6interrupt.cpp"/>
