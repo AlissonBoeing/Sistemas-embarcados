@@ -65,7 +65,7 @@ void GPIO_Port::dir(uint8_t p, bool io) {
     else
         ddr &= ~p;
 }
-void GPIO_Port::set(uint8_t p, bool val) {
+void GPIO_Port::toggle(uint8_t p, bool val) {
     if (val)
         port |= p;
     else
@@ -78,7 +78,7 @@ bool GPIO_Port::get(uint8_t p) {
     return pin & p;
 }
 
-void GPIO_Port::toggle(uint8_t p) {
+void GPIO_Port::set(uint8_t p) {
 	pin = p;
 }
 
