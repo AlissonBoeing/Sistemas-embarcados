@@ -1,8 +1,5 @@
 /*
- * UART.cpp
- *
- *  Created on: 17/04/2019
- *      Author: aluno
+ *UART GENÉRICA
  */
 #include "UART.h"
 

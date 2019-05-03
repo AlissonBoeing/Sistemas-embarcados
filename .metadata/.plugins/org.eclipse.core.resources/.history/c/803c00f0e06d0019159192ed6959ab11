@@ -1,0 +1,40 @@
+/*
+ * ExtInt.h
+ *
+ *  Created on: 03/05/2019
+ *      Author: aluno
+ */
+
+#ifndef EXTINT_H_
+#define EXTINT_H_
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+class ExtInt {
+public:
+
+	enum INT_ID_t {
+
+		INT_1:
+
+
+	};
+
+
+
+	//msk = ((id%4) << 1)
+
+	//EICRA = (EICRA&~(3<<msk))) | (cfg << msk);
+
+	//EICRB = (EICRB&~(3<<msk)) | (cfg<<msk);
+
+	ExtInt(ExtInt::INT_ID_t id,  );
+
+
+
+private:
+
+
+};
+
+#endif /* EXTINT_H_ */

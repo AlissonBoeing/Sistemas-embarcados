@@ -1,8 +1,5 @@
 /*
- * UART2.cpp
- *
- *  Created on: 17/04/2019
- *      Author: aluno
+ * UART COM INTERRUPÇÃO INTERNA
  */
 #include "UART2.h"
 
