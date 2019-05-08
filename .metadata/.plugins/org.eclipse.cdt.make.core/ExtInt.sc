@@ -331,6 +331,7 @@
 <definedSymbol symbol="__AVR__=1"/>
 <definedSymbol symbol="AVR=1"/>
 <definedSymbol symbol="__AVR_ARCH__=5"/>
+<definedSymbol symbol="__AVR_ARCH__=6"/>
 <definedSymbol symbol="__AVR_HAVE_MOVW__=1"/>
 <definedSymbol symbol="__AVR_HAVE_LPMX__=1"/>
 <definedSymbol symbol="__AVR_ENHANCED__=1"/>
@@ -437,7 +438,18 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega2560"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
+<definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_HAVE_RAMPZ__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPM__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPMX__=1"/>
+<definedSymbol symbol="__AVR_HAVE_EIJMP_EICALL__=1"/>
+<definedSymbol symbol="__AVR_3_BYTE_PC__=1"/>
+<definedSymbol symbol="__FLASH1=1"/>
+<definedSymbol symbol="__FLASH2=1"/>
+<definedSymbol symbol="__FLASH3=1"/>
+<definedSymbol symbol="__AVR_ATmega2560__=1"/>
 </collector>
 </instance>
 <instance id="de.innot.avreclipse.configuration.app.debug.1695164627;de.innot.avreclipse.configuration.app.debug.1695164627.;de.innot.avreclipse.tool.cppcompiler.app.debug.1256921265;de.innot.avreclipse.cppcompiler.input.1045169026">
@@ -776,6 +788,7 @@
 <definedSymbol symbol="__AVR__=1"/>
 <definedSymbol symbol="AVR=1"/>
 <definedSymbol symbol="__AVR_ARCH__=5"/>
+<definedSymbol symbol="__AVR_ARCH__=6"/>
 <definedSymbol symbol="__AVR_HAVE_MOVW__=1"/>
 <definedSymbol symbol="__AVR_HAVE_LPMX__=1"/>
 <definedSymbol symbol="__AVR_ENHANCED__=1"/>
@@ -880,7 +893,15 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega2560"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
+<definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_HAVE_RAMPZ__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPM__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPMX__=1"/>
+<definedSymbol symbol="__AVR_HAVE_EIJMP_EICALL__=1"/>
+<definedSymbol symbol="__AVR_3_BYTE_PC__=1"/>
+<definedSymbol symbol="__AVR_ATmega2560__=1"/>
 </collector>
 </instance>
 <instance id="de.innot.avreclipse.configuration.app.release.1642393572;de.innot.avreclipse.configuration.app.release.1642393572.;de.innot.avreclipse.tool.compiler.winavr.app.release.1803007248;de.innot.avreclipse.compiler.winavr.input.322186685">
@@ -1214,6 +1235,7 @@
 <definedSymbol symbol="__AVR__=1"/>
 <definedSymbol symbol="AVR=1"/>
 <definedSymbol symbol="__AVR_ARCH__=5"/>
+<definedSymbol symbol="__AVR_ARCH__=6"/>
 <definedSymbol symbol="__AVR_HAVE_MOVW__=1"/>
 <definedSymbol symbol="__AVR_HAVE_LPMX__=1"/>
 <definedSymbol symbol="__AVR_ENHANCED__=1"/>
@@ -1320,7 +1342,18 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega2560"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
+<definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_HAVE_RAMPZ__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPM__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPMX__=1"/>
+<definedSymbol symbol="__AVR_HAVE_EIJMP_EICALL__=1"/>
+<definedSymbol symbol="__AVR_3_BYTE_PC__=1"/>
+<definedSymbol symbol="__FLASH1=1"/>
+<definedSymbol symbol="__FLASH2=1"/>
+<definedSymbol symbol="__FLASH3=1"/>
+<definedSymbol symbol="__AVR_ATmega2560__=1"/>
 </collector>
 </instance>
 <instance id="de.innot.avreclipse.configuration.app.release.1642393572;de.innot.avreclipse.configuration.app.release.1642393572.;de.innot.avreclipse.tool.cppcompiler.app.release.475097901;de.innot.avreclipse.cppcompiler.input.1488326621">
@@ -1659,6 +1692,7 @@
 <definedSymbol symbol="__AVR__=1"/>
 <definedSymbol symbol="AVR=1"/>
 <definedSymbol symbol="__AVR_ARCH__=5"/>
+<definedSymbol symbol="__AVR_ARCH__=6"/>
 <definedSymbol symbol="__AVR_HAVE_MOVW__=1"/>
 <definedSymbol symbol="__AVR_HAVE_LPMX__=1"/>
 <definedSymbol symbol="__AVR_ENHANCED__=1"/>
@@ -1763,7 +1797,15 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega2560"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
+<definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_HAVE_RAMPZ__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPM__=1"/>
+<definedSymbol symbol="__AVR_HAVE_ELPMX__=1"/>
+<definedSymbol symbol="__AVR_HAVE_EIJMP_EICALL__=1"/>
+<definedSymbol symbol="__AVR_3_BYTE_PC__=1"/>
+<definedSymbol symbol="__AVR_ATmega2560__=1"/>
 </collector>
 </instance>
 </scannerInfo>

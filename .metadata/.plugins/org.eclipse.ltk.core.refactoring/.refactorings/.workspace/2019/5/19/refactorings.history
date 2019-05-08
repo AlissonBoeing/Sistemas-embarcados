@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ExtInt/UART.h&apos;" deleteContents="false" description="Delete resource &apos;ExtInt/UART.h&apos;" element1="/ExtInt/UART.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557337020094"/>&#x0A;<refactoring comment="Delete resource &apos;ExtInt/UART.cpp&apos;" deleteContents="false" description="Delete resource &apos;ExtInt/UART.cpp&apos;" element1="/ExtInt/UART.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557337022003"/>
+</session>

@@ -1,4 +1,4 @@
-16:31:50 **** Incremental Build of configuration Release for project UART2 ****
+15:17:19 **** Incremental Build of configuration Release for project UART2 ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 UART2.elf
@@ -16,5 +16,5 @@ Data:          3 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-16:31:50 Build Finished (took 79ms)
+15:17:19 Build Finished (took 68ms)
 

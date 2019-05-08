@@ -1,0 +1,20 @@
+/*
+ * ExtInt.cpp
+ *
+ *  Created on: 03/05/2019
+ *      Author: aluno
+ */
+
+#include <avr/io.h>
+#include "ExtInt.h"
+
+
+ExtInt::ExtInt(INT_ID_t id, ISC_t cfg, CALLBACK_t callback){
+
+
+
+}
+
+
+
+

@@ -1,0 +1,42 @@
+15:17:18 **** Incremental Build of configuration Release for project ExtInt ****
+make all 
+Building file: ../ExtInt.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"ExtInt.d" -MT"ExtInt.d" -c -o "ExtInt.o" "../ExtInt.cpp"
+Finished building: ../ExtInt.cpp
+ 
+Building target: ExtInt.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,ExtInt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "ExtInt.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./ExtInt.o ./GPIO.o ./UART2.o ./main.o   
+Finished building target: ExtInt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ExtInt.elf  >"ExtInt.lss"
+Finished building: ExtInt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ExtInt.elf  "ExtInt.hex"
+Finished building: ExtInt.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex ExtInt.elf  "ExtInt.eep"
+Finished building: ExtInt.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 ExtInt.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1992 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:17:18 Build Finished (took 169ms)
+
