@@ -1,0 +1,17 @@
+16:19:38 **** Build of configuration Release for project Timeout ****
+make all 
+Building file: ../Timeout.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
+Finished building: ../Timeout.cpp
+ 
+Building target: Timeout.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Timeout.o   
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [Timeout.elf] Error 1
+makefile:65: recipe for target 'Timeout.elf' failed
+
+16:19:39 Build Finished (took 115ms)
+
