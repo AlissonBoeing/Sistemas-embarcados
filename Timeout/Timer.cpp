@@ -6,14 +6,20 @@
  */
 
 #include "Timer.h"
+#include "Timeout.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-Timer::Timer(Hertz freq)
-: _ticks(0), _timer_base(0), _us_per_tick(0)
-{
-	static const unsigned int Timer_Top = 0xFF;
+Timeout Timer::timeout[4];
 
+
+Timer::Timer(Hertz freq): _ticks(0), _timer_base(0), _us_per_tick(0)
+{
+
+
+
+
+	static const unsigned int Timer_Top = 0xFF;
 	static const Hertz Fmax_1024 = F_CPU / 1024;
 	static const Hertz Fmax_256  = F_CPU / 256;
 	static const Hertz Fmax_64   = F_CPU / 64;
@@ -69,6 +75,14 @@ Timer::Timer(Hertz freq)
 
 	TCNT0  = _timer_base;
 	TIMSK0 = 0x01; // liga int de ov
+
+	for(uint8_t i; i<4; i++) {
+		Timeout to;
+		timeout[i] = to;
+	}
+
+	_cont_timeout = 0;
+
 }
 
 Milliseconds Timer::millis()
@@ -92,8 +106,45 @@ void Timer::udelay(Microseconds us)
 	while((micros() - start) <= us);
 }
 
-ISR(TIMER0_OVF_vect) { Timer::ovf_isr_handler(); }
+ISR(TIMER0_OVF_vect) {
+
+	Timer::ovf_isr_handler();
+
+}
+
+
 void Timer::ovf_isr_handler() {
 	TCNT0  = self()->_timer_base;
 	self()->_ticks++;
+	for(uint8_t i = 0; i < 4; i++){
+				if(timeout[i].is_event()){
+					timeout[i].checkTimeout();
+			}
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void Timer::timeoutManager(){
+	for(uint8_t i = 0; i < 4; i++){
+			if(timeout[i].is_event()){
+					timeout[i].callback();
+					timeout[i].d_event();
+				}
+			}
+
+
+}
+void Timer::addTimeout(uint32_t interval, CALLBACK_t callback){
+
+
 }

@@ -1,17 +1,37 @@
-16:19:38 **** Build of configuration Release for project Timeout ****
+15:21:21 **** Incremental Build of configuration Release for project Timeout ****
 make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
 Building target: Timeout.elf
 Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Timeout.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-makefile:65: recipe for target 'Timeout.elf' failed
+avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
+Finished building target: Timeout.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Timeout.elf  >"Timeout.lss"
+Finished building: Timeout.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
+Finished building: Timeout.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Timeout.elf  "Timeout.eep"
+Finished building: Timeout.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
 
-16:19:39 Build Finished (took 115ms)
+Program:    1788 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:21:21 Build Finished (took 66ms)
 

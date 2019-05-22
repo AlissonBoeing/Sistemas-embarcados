@@ -4,13 +4,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Timeout.cpp 
+../GPIO.cpp \
+../GPIO_Port.cpp \
+../Singleton.cpp \
+../Timeout.cpp \
+../Timer.cpp \
+../main.cpp 
 
 OBJS += \
-./Timeout.o 
+./GPIO.o \
+./GPIO_Port.o \
+./Singleton.o \
+./Timeout.o \
+./Timer.o \
+./main.o 
 
 CPP_DEPS += \
-./Timeout.d 
+./GPIO.d \
+./GPIO_Port.d \
+./Singleton.d \
+./Timeout.d \
+./Timer.d \
+./main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

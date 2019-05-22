@@ -47,6 +47,9 @@ endif
 LSS += \
 Timeout.lss \
 
+FLASH_IMAGE += \
+Timeout.hex \
+
 SIZEDUMMY += \
 sizedummy \
 
@@ -68,6 +71,12 @@ Timeout.lss: Timeout.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Timeout.hex: Timeout.elf
+	@echo 'Create Flash image (ihex format)'
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: Timeout.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega2560 Timeout.elf
@@ -76,10 +85,10 @@ sizedummy: Timeout.elf
 
 # Other Targets
 clean:
-	-$(RM) $(C_UPPER_DEPS)$(S_DEPS)$(LSS)$(C_DEPS)$(CC_DEPS)$(ELFS)$(C++_DEPS)$(OBJS)$(CXX_DEPS)$(ASM_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(CPP_DEPS) Timeout.elf
+	-$(RM) $(C_UPPER_DEPS)$(S_DEPS)$(LSS)$(C_DEPS)$(FLASH_IMAGE)$(CC_DEPS)$(ELFS)$(C++_DEPS)$(OBJS)$(CXX_DEPS)$(ASM_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(CPP_DEPS) Timeout.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:

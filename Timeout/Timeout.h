@@ -15,14 +15,19 @@ typedef void (*CALLBACK_t)(void);
 
 class Timeout {
 	public:
+		Timeout();
 		void callback(){(*_pCallback)();}
 		uint32_t _interval;
+		void checkTimeout();
+		void config(uint32_t interval, CALLBACK_t callback);
+		void e_event();
+		bool is_event();
+		void d_event();
 	private:
 		bool _event;
 		bool _enable;
-		uint32_t counter;
+		uint32_t _counter;
 		CALLBACK_t _pCallback;
-
 };
 
 
