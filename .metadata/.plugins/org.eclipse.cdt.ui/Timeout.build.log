@@ -1,22 +1,5 @@
-15:21:21 **** Incremental Build of configuration Release for project Timeout ****
+16:00:34 **** Incremental Build of configuration Release for project Timeout ****
 make all 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
-Finished building target: Timeout.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Timeout.elf  >"Timeout.lss"
-Finished building: Timeout.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
-Finished building: Timeout.hex
- 
-Create eeprom image (ihex format)
-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Timeout.elf  "Timeout.eep"
-Finished building: Timeout.eep
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 Timeout.elf
 AVR Memory Usage
@@ -33,5 +16,5 @@ Data:        274 bytes (3.3% Full)
 Finished building: sizedummy
  
 
-15:21:21 Build Finished (took 66ms)
+16:00:34 Build Finished (took 64ms)
 

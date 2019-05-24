@@ -1,5 +1,35 @@
-15:21:22 **** Incremental Build of configuration Release for project UART ****
+16:00:35 **** Build of configuration Release for project UART ****
 make all 
+Building file: ../UART.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART.d" -MT"UART.d" -c -o "UART.o" "../UART.cpp"
+Finished building: ../UART.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:18: warning: extra tokens at end of #include directive
+ #include "UART.h";
+                  ^
+Finished building: ../main.cpp
+ 
+Building target: UART.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex UART.elf  "UART.eep"
+Finished building: UART.eep
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 UART.elf
 AVR Memory Usage
@@ -16,5 +46,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-15:21:22 Build Finished (took 63ms)
+16:00:35 Build Finished (took 115ms)
 

@@ -1,5 +1,51 @@
-15:21:20 **** Incremental Build of configuration Release for project ExtInt ****
+16:00:33 **** Build of configuration Release for project ExtInt ****
 make all 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -c -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building file: ../ExtInt.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"ExtInt.d" -MT"ExtInt.d" -c -o "ExtInt.o" "../ExtInt.cpp"
+Finished building: ../ExtInt.cpp
+ 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
+../GPIO.cpp: In member function ‘bool GPIO::get()’:
+../GPIO.cpp:101:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../GPIO.cpp
+ 
+Building file: ../UART2.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART2.d" -MT"UART2.d" -c -o "UART2.o" "../UART2.cpp"
+Finished building: ../UART2.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ExtInt.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,ExtInt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "ExtInt.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./ExtInt.o ./GPIO.o ./UART2.o ./main.o   
+Finished building target: ExtInt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ExtInt.elf  >"ExtInt.lss"
+Finished building: ExtInt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ExtInt.elf  "ExtInt.hex"
+Finished building: ExtInt.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex ExtInt.elf  "ExtInt.eep"
+Finished building: ExtInt.eep
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 ExtInt.elf
 AVR Memory Usage
@@ -16,5 +62,5 @@ Data:         21 bytes (0.3% Full)
 Finished building: sizedummy
  
 
-15:21:20 Build Finished (took 68ms)
+16:00:33 Build Finished (took 320ms)
 

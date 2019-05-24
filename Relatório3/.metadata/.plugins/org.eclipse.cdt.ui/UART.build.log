@@ -1,0 +1,20 @@
+16:38:29 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1336 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:38:29 Build Finished (took 67ms)
+

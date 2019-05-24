@@ -76,7 +76,7 @@ Timer::Timer(Hertz freq): _ticks(0), _timer_base(0), _us_per_tick(0)
 	TCNT0  = _timer_base;
 	TIMSK0 = 0x01; // liga int de ov
 
-	for(uint8_t i; i<4; i++) {
+	for(uint8_t i = 0; i<4; i++) {
 		Timeout to;
 		timeout[i] = to;
 	}

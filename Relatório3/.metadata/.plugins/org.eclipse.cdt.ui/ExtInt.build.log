@@ -1,0 +1,20 @@
+16:38:27 **** Incremental Build of configuration Debug for project ExtInt ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 ExtInt.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    2862 bytes (1.1% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:38:27 Build Finished (took 76ms)
+

@@ -1,0 +1,20 @@
+16:38:28 **** Incremental Build of configuration Debug for project Timeout ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    4048 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:38:28 Build Finished (took 70ms)
+

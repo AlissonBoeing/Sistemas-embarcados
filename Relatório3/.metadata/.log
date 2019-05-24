@@ -1,0 +1,54 @@
+!SESSION 2019-05-24 16:26:18.107 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_212
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Command-line arguments:  -data /home/aluno/Sistemas-embarcados/Relatório3 -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:26:54.687
+!MESSAGE Indexed 'ExtInt' (4 sources, 18 headers) in 0,813 sec: 326 declarations; 981 references; 0 unresolved inclusions; 1 syntax errors; 47 unresolved names (3,5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:26:54.856
+!MESSAGE Indexed 'UART' (2 sources, 16 headers) in 0,164 sec: 193 declarations; 537 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:26:55.010
+!MESSAGE Indexed 'UART2' (2 sources, 17 headers) in 0,15 sec: 213 declarations; 607 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:26:55.283
+!MESSAGE Indexed 'Timeout' (6 sources, 18 headers) in 0,271 sec: 212 declarations; 831 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:30:01.206
+!MESSAGE Indexed 'UART3' (0 sources, 0 headers) in 0,001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:32:27.980
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,121 sec: 213 declarations; 596 references; 0 unresolved inclusions; 1 syntax errors; 10 unresolved names (1,2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:33:04.208
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,118 sec: 213 declarations; 600 references; 0 unresolved inclusions; 1 syntax errors; 6 unresolved names (0,73%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:33:41.455
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,102 sec: 213 declarations; 600 references; 0 unresolved inclusions; 1 syntax errors; 6 unresolved names (0,73%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:33:57.800
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,101 sec: 213 declarations; 600 references; 0 unresolved inclusions; 1 syntax errors; 6 unresolved names (0,73%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:35:37.795
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,099 sec: 213 declarations; 607 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:36:37.418
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,099 sec: 213 declarations; 607 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:37:22.022
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,107 sec: 213 declarations; 607 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:37:48.921
+!MESSAGE Indexed 'UART3' (2 sources, 17 headers) in 0,098 sec: 213 declarations; 607 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+!SESSION 2019-05-24 16:38:01.852 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_212
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-24 16:38:38.942
+!MESSAGE Indexed 'ExtInt' (4 sources, 19 headers) in 0,503 sec: 328 declarations; 1.021 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)

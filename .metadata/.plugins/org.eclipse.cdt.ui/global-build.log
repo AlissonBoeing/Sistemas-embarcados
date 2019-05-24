@@ -1,9 +1,15 @@
-14:28:46 **** Clean-only build of configuration Debug for project Timeout ****
-make clean 
-rm -rf  Timeout.lss  ./Singleton.o ./Timeout.o ./Timer.o  sizedummy  ./Singleton.d ./Timeout.d ./Timer.d  Timeout.elf
- 
-14:28:46 **** Incremental Build of configuration Debug for project Timeout ****
+15:59:38 **** Build of configuration Debug for project Timeout ****
 make all 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
+Finished building: ../GPIO.cpp
+ 
+Building file: ../GPIO_Port.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.d" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
+Finished building: ../GPIO_Port.cpp
+ 
 Building file: ../Singleton.cpp
 Invoking: AVR C++ Compiler
 avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Singleton.d" -MT"Singleton.d" -c -o "Singleton.o" "../Singleton.cpp"
@@ -19,23 +25,112 @@ Invoking: AVR C++ Compiler
 avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
 Finished building: ../Timer.cpp
  
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
 Building target: Timeout.elf
 Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-makefile:59: recipe for target 'Timeout.elf' failed
-14:28:46 **** Incremental Build of configuration Release for project Timeout ****
+avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
+Finished building target: Timeout.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Timeout.elf  >"Timeout.lss"
+Finished building: Timeout.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
+Finished building: Timeout.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    4048 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:59:39 **** Clean-only build of configuration Release for project Timeout ****
+make clean 
+rm -rf  Timeout.lss  Timeout.hex  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o  Timeout.eep  sizedummy  ./GPIO.d ./GPIO_Port.d ./Singleton.d ./Timeout.d ./Timer.d ./main.d  Timeout.elf
+ 
+15:59:39 **** Build of configuration Release for project Timeout ****
 make all 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
+Finished building: ../GPIO.cpp
+ 
+Building file: ../GPIO_Port.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.d" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
+Finished building: ../GPIO_Port.cpp
+ 
+Building file: ../Singleton.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Singleton.d" -MT"Singleton.d" -c -o "Singleton.o" "../Singleton.cpp"
+Finished building: ../Singleton.cpp
+ 
+Building file: ../Timeout.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
+Finished building: ../Timeout.cpp
+ 
+Building file: ../Timer.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
+../Timer.cpp: In constructor ‘Timer::Timer(Hertz)’:
+../Timer.cpp:81:18: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   timeout[i] = to;
+                  ^
+Finished building: ../Timer.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
 Building target: Timeout.elf
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
 Invoking: AVR C++ Linker
-collect2: error: ld returned 1 exit status
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-make: *** [Timeout.elf] Error 1
-makefile:65: recipe for target 'Timeout.elf' failed
-14:50:24 **** Build of configuration Debug for project ExtInt ****
+avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
+Finished building target: Timeout.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Timeout.elf  >"Timeout.lss"
+Finished building: Timeout.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
+Finished building: Timeout.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Timeout.elf  "Timeout.eep"
+Finished building: Timeout.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1788 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:00:32 **** Build of configuration Debug for project ExtInt ****
 make all 
 Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
 Invoking: AVR Compiler
@@ -98,7 +193,7 @@ Data:         21 bytes (0.3% Full)
 
 Finished building: sizedummy
  
-14:50:24 **** Build of configuration Release for project ExtInt ****
+16:00:33 **** Build of configuration Release for project ExtInt ****
 make all 
 Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
 Invoking: AVR Compiler
@@ -161,35 +256,88 @@ Data:         21 bytes (0.3% Full)
 
 Finished building: sizedummy
  
-14:50:25 **** Incremental Build of configuration Debug for project Timeout ****
+16:00:34 **** Clean-only build of configuration Debug for project Timeout ****
+make clean 
+rm -rf  Timeout.lss  Timeout.hex  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o  sizedummy  ./GPIO.d ./GPIO_Port.d ./Singleton.d ./Timeout.d ./Timer.d ./main.d  Timeout.elf
+ 
+16:00:34 **** Incremental Build of configuration Debug for project Timeout ****
 make all 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
+Finished building: ../GPIO.cpp
+ 
+Building file: ../GPIO_Port.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.d" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
+Finished building: ../GPIO_Port.cpp
+ 
+Building file: ../Singleton.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Singleton.d" -MT"Singleton.d" -c -o "Singleton.o" "../Singleton.cpp"
+Finished building: ../Singleton.cpp
+ 
 Building file: ../Timeout.cpp
 Invoking: AVR C++ Compiler
 avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-In file included from ../Timeout.cpp:9:0:
-../Timeout.h:20:21: error: expected ‘;’ at end of member declaration
-   void checkTimeout()
-                     ^
-../Timeout.cpp:13:18: error: definition of implicitly-declared ‘Timeout::Timeout()’
-subdir.mk:24: recipe for target 'Timeout.o' failed
- Timeout::Timeout() {
-                  ^
-make: *** [Timeout.o] Error 1
-14:50:25 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
+Finished building: ../Timeout.cpp
+ 
+Building file: ../Timer.cpp
 Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-In file included from ../Timeout.cpp:9:0:
-../Timeout.h:20:21: error: expected ‘;’ at end of member declaration
-   void checkTimeout()
-                     ^
-../Timeout.cpp:13:18: error: definition of implicitly-declared ‘Timeout::Timeout()’
-subdir.mk:24: recipe for target 'Timeout.o' failed
- Timeout::Timeout() {
-                  ^
-make: *** [Timeout.o] Error 1
-14:50:26 **** Build of configuration Debug for project UART ****
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
+Finished building: ../Timer.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: Timeout.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
+Finished building target: Timeout.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Timeout.elf  >"Timeout.lss"
+Finished building: Timeout.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
+Finished building: Timeout.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    4048 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:00:34 **** Incremental Build of configuration Release for project Timeout ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 Timeout.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    1788 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:00:35 **** Build of configuration Debug for project UART ****
 make all 
 Building file: ../UART.cpp
 Invoking: AVR C++ Compiler
@@ -236,7 +384,7 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
-14:50:26 **** Build of configuration Release for project UART ****
+16:00:35 **** Build of configuration Release for project UART ****
 make all 
 Building file: ../UART.cpp
 Invoking: AVR C++ Compiler
@@ -283,7 +431,7 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
-14:50:27 **** Build of configuration Debug for project UART2 ****
+16:00:35 **** Build of configuration Debug for project UART2 ****
 make all 
 Building file: ../UART2.cpp
 Invoking: AVR C++ Compiler
@@ -291,11 +439,11 @@ avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -f
 Finished building: ../UART2.cpp
  
 Building file: ../main.cpp
-../main.cpp:7:19: warning: extra tokens at end of #include directive
 Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
+../main.cpp:7:19: warning: extra tokens at end of #include directive
  #include "UART2.h";
                    ^
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
 In file included from ../main.cpp:8:0:
 /usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
  # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
@@ -330,7 +478,7 @@ Data:          3 bytes (0.0% Full)
 
 Finished building: sizedummy
  
-14:50:27 **** Build of configuration Release for project UART2 ****
+16:00:36 **** Build of configuration Release for project UART2 ****
 make all 
 Building file: ../UART2.cpp
 Invoking: AVR C++ Compiler
@@ -362,1028 +510,6 @@ Create eeprom image (ihex format)
 avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex UART2.elf  "UART2.eep"
 Finished building: UART2.eep
  
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:08 **** Clean-only build of configuration Debug for project ExtInt ****
-make clean 
-rm -rf  ExtInt.lss  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  ExtInt.hex  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./ExtInt.o ./GPIO.o ./UART2.o ./main.o  sizedummy  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  ./ExtInt.d ./GPIO.d ./UART2.d ./main.d  ExtInt.elf
- 
-14:51:08 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -c -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
-Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
- 
-Building file: ../ExtInt.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"ExtInt.d" -MT"ExtInt.d" -c -o "ExtInt.o" "../ExtInt.cpp"
-Finished building: ../ExtInt.cpp
- 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-../GPIO.cpp: In member function ‘bool GPIO::get()’:
-../GPIO.cpp:101:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-Finished building: ../GPIO.cpp
- 
-Building file: ../UART2.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART2.d" -MT"UART2.d" -c -o "UART2.o" "../UART2.cpp"
-Finished building: ../UART2.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-In file included from ../main.cpp:5:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../main.cpp
- 
-Building target: ExtInt.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,ExtInt.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "ExtInt.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./ExtInt.o ./GPIO.o ./UART2.o ./main.o   
-Finished building target: ExtInt.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ExtInt.elf  >"ExtInt.lss"
-Finished building: ExtInt.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ExtInt.elf  "ExtInt.hex"
-Finished building: ExtInt.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:08 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:09 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:59: recipe for target 'Timeout.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-14:51:09 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-makefile:65: recipe for target 'Timeout.elf' failed
-make: *** [Timeout.elf] Error 1
-14:51:09 **** Clean-only build of configuration Debug for project UART ****
-make clean 
-rm -rf  UART.lss  UART.hex  ./UART.o ./main.o  sizedummy  ./UART.d ./main.d  UART.elf
- 
-14:51:09 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Building file: ../UART.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART.d" -MT"UART.d" -c -o "UART.o" "../UART.cpp"
-Finished building: ../UART.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-../main.cpp:7:18: warning: extra tokens at end of #include directive
- #include "UART.h";
-                  ^
-In file included from ../main.cpp:8:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../main.cpp
- 
-Building target: UART.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,UART.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART.elf"  ./UART.o ./main.o   
-Finished building target: UART.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S UART.elf  >"UART.lss"
-Finished building: UART.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
-Finished building: UART.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:09 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:10 **** Clean-only build of configuration Debug for project UART2 ****
-make clean 
-rm -rf  UART2.lss  UART2.hex  ./UART2.o ./main.o  sizedummy  ./UART2.d ./main.d  UART2.elf
- 
-14:51:10 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Building file: ../UART2.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART2.d" -MT"UART2.d" -c -o "UART2.o" "../UART2.cpp"
-Finished building: ../UART2.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-../main.cpp:7:19: warning: extra tokens at end of #include directive
- #include "UART2.h";
-                   ^
-In file included from ../main.cpp:8:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../main.cpp
- 
-Building target: UART2.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,UART2.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART2.elf"  ./UART2.o ./main.o   
-Finished building target: UART2.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S UART2.elf  >"UART2.lss"
-Finished building: UART2.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART2.elf  "UART2.hex"
-Finished building: UART2.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:10 **** Incremental Build of configuration Release for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:18 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:18 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:19 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-../Timer.cpp:13:8: error: expected unqualified-id before ‘[’ token
- Timeout[] = Timetout::Time;
-        ^
-make: *** [Timer.o] Error 1
-subdir.mk:24: recipe for target 'Timer.o' failed
-14:51:19 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-../Timer.cpp:13:8: error: expected unqualified-id before ‘[’ token
- Timeout[] = Timetout::Time;
-        ^
-subdir.mk:24: recipe for target 'Timer.o' failed
-make: *** [Timer.o] Error 1
-14:51:20 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:20 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:20 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:51:20 **** Incremental Build of configuration Release for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:52:59 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:00 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:00 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:59: recipe for target 'Timeout.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-14:53:00 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:65: recipe for target 'Timeout.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-14:53:01 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:01 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:01 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-14:53:02 **** Incremental Build of configuration Release for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:08 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:08 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:09 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-makefile:59: recipe for target 'Timeout.elf' failed
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-15:15:09 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../Timeout.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timeout.d" -MT"Timeout.d" -c -o "Timeout.o" "../Timeout.cpp"
-Finished building: ../Timeout.cpp
- 
-Building file: ../Timer.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Timer.d" -MT"Timer.d" -c -o "Timer.o" "../Timer.cpp"
-../Timer.cpp: In constructor ‘Timer::Timer(Hertz)’:
-../Timer.cpp:81:18: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   timeout[i] = to;
-                  ^
-Finished building: ../Timer.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./Singleton.o ./Timeout.o ./Timer.o   
-/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr6/crtatmega2560.o:(.init9+0x0): undefined reference to `main'
-makefile:65: recipe for target 'Timeout.elf' failed
-collect2: error: ld returned 1 exit status
-make: *** [Timeout.elf] Error 1
-15:15:09 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:10 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:10 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:15:10 **** Incremental Build of configuration Release for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:50 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:50 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:51 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-Finished building: ../GPIO.cpp
- 
-Building file: ../GPIO_Port.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.d" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
-Finished building: ../GPIO_Port.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-Finished building: ../main.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
-Finished building target: Timeout.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Timeout.elf  >"Timeout.lss"
-Finished building: Timeout.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 Timeout.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    4048 bytes (1.5% Full)
-(.text + .data + .bootloader)
-
-Data:        274 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:51 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building file: ../GPIO.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.d" -c -o "GPIO.o" "../GPIO.cpp"
-Finished building: ../GPIO.cpp
- 
-Building file: ../GPIO_Port.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.d" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
-Finished building: ../GPIO_Port.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-Finished building: ../main.cpp
- 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
-Finished building target: Timeout.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Timeout.elf  >"Timeout.lss"
-Finished building: Timeout.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
-Finished building: Timeout.hex
- 
-Create eeprom image (ihex format)
-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Timeout.elf  "Timeout.eep"
-Finished building: Timeout.eep
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 Timeout.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1788 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:        274 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:52 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:52 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:52 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:20:52 **** Incremental Build of configuration Release for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     722 bytes (0.3% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:20 **** Incremental Build of configuration Debug for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    2862 bytes (1.1% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:20 **** Incremental Build of configuration Release for project ExtInt ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1992 bytes (0.8% Full)
-(.text + .data + .bootloader)
-
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:21 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
-Finished building target: Timeout.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Timeout.elf  >"Timeout.lss"
-Finished building: Timeout.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
-Finished building: Timeout.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 Timeout.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    4048 bytes (1.5% Full)
-(.text + .data + .bootloader)
-
-Data:        274 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:21 **** Incremental Build of configuration Release for project Timeout ****
-make all 
-Building target: Timeout.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,Timeout.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "Timeout.elf"  ./GPIO.o ./GPIO_Port.o ./Singleton.o ./Timeout.o ./Timer.o ./main.o   
-Finished building target: Timeout.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Timeout.elf  >"Timeout.lss"
-Finished building: Timeout.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timeout.elf  "Timeout.hex"
-Finished building: Timeout.hex
- 
-Create eeprom image (ihex format)
-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Timeout.elf  "Timeout.eep"
-Finished building: Timeout.eep
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 Timeout.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1788 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:        274 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:21 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:22 **** Incremental Build of configuration Release for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:     468 bytes (0.2% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:22 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-15:21:22 **** Incremental Build of configuration Release for project UART2 ****
-make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 UART2.elf
 AVR Memory Usage
