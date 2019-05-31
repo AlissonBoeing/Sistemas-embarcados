@@ -1,4 +1,4 @@
-16:38:28 **** Incremental Build of configuration Debug for project Timeout ****
+17:16:30 **** Incremental Build of configuration Debug for project Timeout ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 Timeout.elf
@@ -16,5 +16,5 @@ Data:        274 bytes (3.3% Full)
 Finished building: sizedummy
  
 
-16:38:28 Build Finished (took 70ms)
+17:16:30 Build Finished (took 76ms)
 

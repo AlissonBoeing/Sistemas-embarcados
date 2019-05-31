@@ -1,4 +1,4 @@
-16:38:27 **** Incremental Build of configuration Debug for project ExtInt ****
+17:16:30 **** Incremental Build of configuration Debug for project ExtInt ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega2560 ExtInt.elf
@@ -16,5 +16,5 @@ Data:         21 bytes (0.3% Full)
 Finished building: sizedummy
  
 
-16:38:27 Build Finished (took 76ms)
+17:16:30 Build Finished (took 65ms)
 

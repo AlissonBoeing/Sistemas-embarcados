@@ -1,110 +1,15 @@
-16:37:31 **** Clean-only build of configuration Debug for project UART3 ****
-make clean 
-rm -rf  UART3.lss  ./UART3.o ./main.o  sizedummy  ./UART3.d ./main.d  UART3.elf
- 
-16:38:27 **** Incremental Build of configuration Debug for project ExtInt ****
+17:16:35 **** Incremental Build of configuration Debug for project PcINT ****
 make all 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 ExtInt.elf
+avr-size --format=avr --mcu=atmega2560 PcINT.elf
 AVR Memory Usage
 ----------------
 Device: atmega2560
 
-Program:    2862 bytes (1.1% Full)
+Program:    2008 bytes (0.8% Full)
 (.text + .data + .bootloader)
 
-Data:         21 bytes (0.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:38:28 **** Incremental Build of configuration Debug for project Timeout ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 Timeout.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    4048 bytes (1.5% Full)
-(.text + .data + .bootloader)
-
-Data:        274 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:38:29 **** Incremental Build of configuration Debug for project UART ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1336 bytes (0.5% Full)
-(.text + .data + .bootloader)
-
-Data:          0 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:38:29 **** Incremental Build of configuration Debug for project UART2 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART2.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-16:38:29 **** Build of configuration Debug for project UART3 ****
-make all 
-Building file: ../UART3.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"UART3.d" -MT"UART3.d" -c -o "UART3.o" "../UART3.cpp"
-Finished building: ../UART3.cpp
- 
-Building file: ../main.cpp
-Invoking: AVR C++ Compiler
-avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.cpp"
-In file included from ../main.cpp:7:0:
-/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
- # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-   ^
-Finished building: ../main.cpp
- 
-Building target: UART3.elf
-Invoking: AVR C++ Linker
-avr-g++ -Wl,-Map,UART3.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "UART3.elf"  ./UART3.o ./main.o   
-Finished building target: UART3.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S UART3.elf  >"UART3.lss"
-Finished building: UART3.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega2560 UART3.elf
-AVR Memory Usage
-----------------
-Device: atmega2560
-
-Program:    1730 bytes (0.7% Full)
-(.text + .data + .bootloader)
-
-Data:          3 bytes (0.0% Full)
+Data:        265 bytes (3.2% Full)
 (.data + .bss + .noinit)
 
 
